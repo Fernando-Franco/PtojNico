@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activitys.LoginActivity">
+
+    <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/sign_in_facebook"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Facebook"
+            style="@style/com_facebook_button"
+            android:layout_marginBottom="5dp"/>
+
+        <Button
+            android:id="@+id/sign_in_google"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            style="@style/com_google_button"
+            android:text="Google"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

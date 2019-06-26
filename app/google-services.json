@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "743370756277",
+    "firebase_url": "https://peruibemelhor-b4684.firebaseio.com",
+    "project_id": "peruibemelhor-b4684",
+    "storage_bucket": "peruibemelhor-b4684.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743370756277:android:334074a3596387d6",
+        "android_client_info": {
+          "package_name": "com.almost.peruibemelhor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743370756277-aeuaib3ct1fldpf1lbu0i0dbr23aos1f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.almost.peruibemelhor",
+            "certificate_hash": "10f736f8fae561f1e6ba487a8f789684519dc1e8"
+          }
+        },
+        {
+          "client_id": "743370756277-tu794opeol4prbbh70m42k0d0flvv53n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-VJ6EXgnkIehKoFzfweL2MPc-k-vRc_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743370756277-tu794opeol4prbbh70m42k0d0flvv53n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

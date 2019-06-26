@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Peruibe Melhor</string>
+    <string name="pref_user">Y3VycmVudF91c2Vy</string>//Base64
+    <string name="title_activity_main">Peruibe Melhor</string>
+    <string name="tab_text_1">SUAS PASTAS</string>
+    <string name="tab_text_2">TODAS</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="follow">Seguindo</string>
+    <string name="unfollow">Seguir</string>
+    <string name="title_activity_chat">ChatActivity</string>
+
+</resources>
