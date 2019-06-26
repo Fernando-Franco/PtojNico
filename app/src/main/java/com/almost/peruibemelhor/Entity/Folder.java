@@ -1,7 +1,12 @@
 package com.almost.peruibemelhor.Entity;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "folder")
 public class Folder {
 
+    @PrimaryKey(autoGenerate = true)
     private String id_folder;
     private String id_creator;
 

@@ -8,46 +8,42 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.almost.peruibemelhor.Entity.Folder;
 import com.almost.peruibemelhor.Entity.Message;
 
-@androidx.room.Database(entities = {Message.class}, version = 1)
+@androidx.room.Database(entities = {Folder.class}, version = 1)
 public abstract class Database extends RoomDatabase {
 
-    private static Database instance;
+    private static Database INSTANCE;
 
-    public abstract MessageDao messageDao();
+    public abstract FolderDao folderDao();
 
-    public static synchronized Database getInstance(Context c){
-        if (instance == null){
-            instance = Room.databaseBuilder(c.getApplicationContext(),
-                    Database.class, "database")
-                    .fallbackToDestructiveMigration()
-                    .addCallback(roomCallback)
-                    .build();
+    public static Database getAppDatabase(Context context) {
+        if (INSTANCE == null) {
+            INSTANCE =
+                    Room.databaseBuilder(context.getApplicationContext(), Database.class, "user-database")
+                            // allow queries on the main thread.
+                            // Don't do this on a real app! See PersistenceBasicSample for an example.
+                            .allowMainThreadQueries()
+                            .build();
         }
-        return instance;
+        return INSTANCE;
     }
 
-    private static RoomDatabase.Callback roomCallback = new Callback() {
-        @Override
-        public void onCreate(@NonNull SupportSQLiteDatabase db) {
-            super.onCreate(db);
-            new PopulateDbAsyncTask(instance).execute();
-        }
-    };
-
-    private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void>{
-        private MessageDao messageDao;
-
-        private PopulateDbAsyncTask(Database db){
-            messageDao = db.messageDao();
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            //messageDao.insert(new Message(pram1, pram2, pram3));
-            return null;
-        }
+    public static void destroyInstance() {
+        INSTANCE = null;
     }
 
+    private static Folder addFolder(final Database db, Folder folder) {
+        db.folderDao().insertAll(folder);
+        return folder;
+    }
+
+    private static void populateWithTestData(Database db) {
+        Folder folder = new Folder();
+        folder.setId_folder("f99");
+        folder.setTitle("Teste");
+        folder.setDescription("teste");
+        addFolder(db, folder);
+    }
 }
